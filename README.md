@@ -17,6 +17,10 @@ A comprehensive collection of x86-64 assembly language programs developed for mi
 - [Programs Included](#programs-included)
 - [Contributing](#contributing)
 - [Resources](#resources)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## 🎯 Overview
 
@@ -44,7 +48,6 @@ Microprocessor-Lab/
 ├── all/                     # Complete collection of common algorithms
 ├── rough/                   # Development/testing files
 ├── sojib_23_min_max.asm    # Min/Max implementation
-├── sojib_23_palindrome.asm # Palindrome checker
 └── README.md               # This file
 ```
 
