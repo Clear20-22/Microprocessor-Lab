@@ -43,13 +43,15 @@ Microprocessor-Lab/
 ├── lab4/                    # Advanced Operations (Number Reversal, etc.)
 ├── lab5/                    # Complex Programs & Matrix Operations
 ├── Lab Exam/                # Exam problems (Min/Max, Palindrome)
-├── Practice/                # Practice exercises
-├── practice/                # Additional practice files
+├── Practice/                # Practice exercises (larger programs)
+├── practice/                # Additional practice files (smaller exercises)
 ├── all/                     # Complete collection of common algorithms
 ├── rough/                   # Development/testing files
 ├── sojib_23_min_max.asm    # Min/Max implementation
 └── README.md               # This file
 ```
+
+> **Note:** The repository contains both `Practice/` and `practice/` directories due to case-sensitivity in the original file structure. Both contain practice exercises.
 
 ## 🔧 Prerequisites
 
