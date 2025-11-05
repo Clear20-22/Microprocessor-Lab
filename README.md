@@ -2,7 +2,7 @@
 
 [![Assembly](https://img.shields.io/badge/Assembly-x86--64-blue.svg)](https://www.nasm.us/)
 [![NASM](https://img.shields.io/badge/NASM-2.14+-green.svg)](https://www.nasm.us/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Educational](https://img.shields.io/badge/Purpose-Educational-yellow.svg)](#)
 
 A comprehensive collection of x86-64 assembly language programs developed for microprocessor laboratory coursework. This repository contains various assembly programs demonstrating fundamental concepts, algorithms, and data structures implementation in low-level programming.
 
@@ -175,8 +175,8 @@ gdb ./program
 | `div.asm` | Division operation |
 | `div_pro.asm` | Advanced division |
 | `factorial.asm` | Factorial calculation |
-| `fibonacci.asm` | Fibonacci sequence |
-| `n_fibonacci.asm` | Nth Fibonacci number |
+| `n_fibonacci.asm` | N Fibonacci numbers |
+| `nth_fibonacci.asm` | Nth Fibonacci number |
 | `check_prime.asm` | Prime number checker |
 | `divisor_finding.asm` | Find all divisors |
 | `max_among_3.asm` | Maximum of three numbers |
