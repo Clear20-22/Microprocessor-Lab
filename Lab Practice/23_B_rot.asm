@@ -48,12 +48,14 @@ rotate_array:
     push rbp
     mov rbp, rsp
     
+    ; Normalize k to avoid unnecessary rotations (k = k % n)
     mov rax, [k]
     mov rbx, [n]
     xor rdx, rdx
     div rbx                  
     mov [k], rdx
 
+    ; Initialize counter for rotation loop
     mov rax, 0
     mov [i], rax 
 
@@ -62,6 +64,7 @@ rotate_array:
     cmp rax, [n]
     jge .rotate_done
 
+    ; Calculate new position: (current_index + k) % n
     mov rbx, [i]
     add rbx, [k]
     mov rcx, [n]
@@ -69,6 +72,7 @@ rotate_array:
     jl .no_wrap
     sub rbx, rcx
 .no_wrap:
+    ; Move element from arr[i] to temp[new_position]
     mov rdx, [arr + rax*8]
     mov [temp + rbx*8], rdx
 
@@ -76,6 +80,42 @@ rotate_array:
     jmp .rotate_loop
 
 .rotate_done:
+    pop rbp
+    ret
+
+display_output:
+    push rbp
+    mov rbp, rsp
+    
+    ; Print header message
+    mov rdi, out_fmt_2
+    xor rax, rax 
+    call printf 
+
+    ; Initialize counter for output loop
+    mov rax, 0
+    mov [i], rax
+
+.print_loop:
+    mov rax, [i]
+    cmp rax, [n]
+    jge .print_done
+
+    ; Print each element from rotated array
+    mov rdi, out_fmt
+    mov rsi, [temp + rax*8]
+    xor rax, rax
+    call printf
+
+    inc qword [i]
+    jmp .print_loop
+
+.print_done:
+    ; Print newline at the end
+    mov rdi, newline 
+    xor rax, rax 
+    call printf
+    
     pop rbp
     ret
 
@@ -109,31 +149,7 @@ main:
 
     call rotate_array
 
-print_result:
-    mov rdi, out_fmt_2
-    xor rax, rax 
-    call printf 
-
-    mov rax, 0
-    mov [i], rax
-
-print_loop:
-    mov rax, [i]
-    cmp rax, [n]
-    jge exit
-
-    mov rdi, out_fmt
-    mov rsi, [temp + rax*8]
-    xor rax, rax
-    call printf
-
-    inc qword [i]
-    jmp print_loop
-
-exit:
-    mov rdi, newline 
-    xor rax, rax 
-    call printf
+    call display_output
 
     pop rbp
     mov rax, 0
